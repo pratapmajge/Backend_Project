@@ -1,6 +1,41 @@
+// require('dotenv').config({path: './env'}) // it can be used and it's fully correct code but new method is aslo there ..
+
+import dotenv from 'dotenv' 
+
 import mongoose from "mongoose";
 import {DB_NAME} from './constants.js'
 
+import connectDB from "./db/index.js";
+
+dotenv.config({
+    path: './env'
+})
+
+connectDB()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 import express from 'express'
 
 // function connectDB(){
@@ -27,3 +62,4 @@ const app = express()
         throw err 
     }
 })()
+*/
