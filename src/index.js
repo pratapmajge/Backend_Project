@@ -23,6 +23,8 @@ connectDB() //it is async function after async there is always .then and .catch 
     
 })
 
+
+// in db folder i've written this code to avoid complication in main index file 
 /*
 import express from 'express'
 
@@ -32,7 +34,7 @@ import express from 'express'
 
 const app = express()
 
-(async () => {
+;(async () => {
     try {
         await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
             app.on("error",(error) => {
