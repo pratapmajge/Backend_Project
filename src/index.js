@@ -1,27 +1,28 @@
-// require('dotenv').config({path: './env'}) // it can be used and it's fully correct code but new method is aslo there ..
-
+// require('dotenv').config({path: './.env'}) // it can be used and it's fully correct code but new method is aslo there ..
+import express from 'express'
 import dotenv from 'dotenv' 
-
-import mongoose from "mongoose";
-import {DB_NAME} from './constants.js'
-
-import connectDB from "./db/index.js";
+import connectDB from "./db/index.js"
 
 dotenv.config({
-    path: './env'
+    path: './.env'
 })
 
+const app= express()
 connectDB() //it is async function after async there is always .then and .catch so..
 .then(() => {
     app.listen(process.env.PORT || 8000 , () => {
         console.log(`server is running at port: ${process.env.PORT}`);
         
-    })
+    });
 })
 .catch((err) => {
     console.log("MongoDB Connection failed  !!" , err);
-    
-})
+});
+
+
+//
+
+
 
 
 // in db folder i've written this code to avoid complication in main index file 
