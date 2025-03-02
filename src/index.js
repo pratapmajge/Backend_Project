@@ -2,13 +2,13 @@
 import express from 'express'
 import dotenv from 'dotenv' 
 import connectDB from "./db/index.js"
-// import {app} from './app.js'
+import {app} from './app.js'
 
 dotenv.config({
     path: './.env'
 })
 
-const app= express()
+// const app= express()
 connectDB() //it is async function after async there is always .then and .catch so..
 .then(() => {
     app.listen(process.env.PORT || 8000 , () => {
